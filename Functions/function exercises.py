@@ -120,3 +120,9 @@ def partition(ls, fn="isEven"):
 # return [[l.pop(l.index(i)) for i in l if callback(i)],l]
 
 print(partition([1,2,3,4], isEven))
+
+def extract_full_name(ls):
+    return list(map(lambda val: f"{val['first']} {val['last']}", ls))
+
+names = [{'first': 'Elie', 'last': 'Schoppik'}, {'first': 'Colt', 'last': 'Steele'}]
+print(extract_full_name(names))
