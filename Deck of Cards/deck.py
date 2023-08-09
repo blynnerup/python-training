@@ -13,7 +13,7 @@ class Deck:
         self.cards = [Card(value, suit) for value in values for suit in suits]
         
     def __repr__(self) -> str:
-        return f"Deck of {len(self.cards)} cards."   
+        return f"Deck of {len(self.cards)} cards"   
 
     def count(self):
         return len(self.cards)
@@ -36,7 +36,7 @@ class Deck:
         if len(self.cards) == 52:
             random.shuffle(self.cards)
         else:
-            raise ValueError("Only full decks can be shuffled.")
+            raise ValueError("Only full decks can be shuffled")
                            
     
 d = Deck()
