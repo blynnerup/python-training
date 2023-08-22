@@ -1,5 +1,5 @@
 from functools import wraps
-
+# Exercise 1
 def double_return(fn):
     @wraps(fn)
     def double_return_wrapper(*args, **kwargs):
@@ -18,7 +18,7 @@ def greet(name):
 
 greet("Colt")
 
-
+# Exercise 2
 def ensure_fewer_than_three_args(fn):
     @wraps(fn)
     def wrapper(*args, **kwargs):
@@ -33,3 +33,22 @@ def add_all(*nums):
 
 add_all(1)
 add_all(1,2)
+
+# Exercise 3
+def only_ints(fn):
+    @wraps(fn)
+    def only_ints_wrapper(*args, **kwargs):
+        if all(isinstance(x, int) for x in args):
+            # print("ok")
+            return fn(*args, **kwargs)
+        else:
+            # print("not ok")
+            return("Please only invoke with integers.")
+    return only_ints_wrapper
+
+@only_ints 
+def add(x, y):
+    return x + y
+    
+add(1, 2)
+add("1", "2")
