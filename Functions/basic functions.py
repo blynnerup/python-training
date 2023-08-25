@@ -26,6 +26,14 @@ def yell(cry):
 print(yell("Upper case this!"))
 
 def exponent(num, power = 2):
+     """ Multiplies num by power times and returns result
+
+     >>>exponent(2, 2)
+     4
+
+     >>>exponent(3,3)
+     27
+     """
      return num ** power
 
 print(exponent(2,3))

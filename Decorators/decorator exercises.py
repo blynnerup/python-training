@@ -1,4 +1,5 @@
 from functools import wraps
+from time import sleep
 # Exercise 1
 def double_return(fn):
     @wraps(fn)
@@ -52,3 +53,37 @@ def add(x, y):
     
 add(1, 2)
 add("1", "2")
+
+# Exercise 4
+def ensure_authorized(fn):
+    @wraps(fn)
+    def ensure_authorized_wrapper(*args, **kwargs):
+        if kwargs.get("role") == "admin":
+            return fn(*args, **kwargs)
+        return "Unauthorized"
+    return ensure_authorized_wrapper
+
+@ensure_authorized
+def show_secrets(*args, **kwargs):
+    return "Shh! Don't tell anybody!"
+
+show_secrets(role="admin")
+
+# Exercise 5
+def delay(time):
+    print("In delays")
+    def lets_wait(func):
+        print("In lets wait")
+        @wraps(func)
+        def await_time(*args, **kwargs):
+            print(f"Waiting {time}s before running say_hi")
+            sleep(time)
+            print("Done waiting")
+            return func(*args, **kwargs)
+        return await_time
+    return lets_wait
+
+@delay(3)
+def say_hi():
+    print("Hi")
+
