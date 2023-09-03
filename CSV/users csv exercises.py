@@ -15,12 +15,12 @@ add_user("Dwayne", "Johnson") # None
 '''
 from csv import writer, DictReader, reader
 
-def add_user(first_name, last_name):
-    with open("users.csv", encoding="utf8", mode="a", newline="") as file:
-        csv_writer = writer(file)
-        csv_writer.writerow([first_name, last_name])
+# def add_user(first_name, last_name):
+#     with open("users.csv", encoding="utf8", mode="a", newline="") as file:
+#         csv_writer = writer(file)
+#         csv_writer.writerow([first_name, last_name])
 
-add_user("Dwayne", "Johnson")
+# add_user("Dwayne", "Johnson")
 
 '''
 Ex2:
@@ -64,3 +64,35 @@ def find_user(first_name, last_name):
 
 print(find_user('Colt', 'Steele'))
 print(find_user('John', 'Johnson'))
+
+'''
+Ex4:
+Implement the following function:
+
+update_users : Takes in an old first name, an old last name, a new first name, and a new last name. 
+Updates the users.csv file so that any user whose first and last names match the old first and last names
+are updated to the new first and last names. 
+The function should return a count of how many users were updated.
+
+update_users("Grace", "Hopper", "Hello", "World") # Users updated: 1.
+update_users("Colt", "Steele", "Boba", "Fett") # Users updated: 2.
+update_users("Not", "Here", "Still not", "Here") # Users updated: 0.
+'''
+
+def update_users(old_first, old_last, new_first, new_last):
+    with open("users.csv", encoding="utf8", mode="r") as file:
+        csv_reader = reader(file)
+        data = list(csv_reader)
+        count = 0
+        
+    with open("users.csv", encoding="utf8", mode="w") as file:
+        csv_writer = writer(file)
+        for row in data:
+            if row[0] == old_first and row[1] == old_last:
+                count += 1
+                csv_writer.writerow([new_first, new_last])
+            else:
+                csv_writer.writerow(row)
+        print(count)
+
+update_users("Colt", "Steele", "Boba", "Fett")
