@@ -79,20 +79,52 @@ update_users("Colt", "Steele", "Boba", "Fett") # Users updated: 2.
 update_users("Not", "Here", "Still not", "Here") # Users updated: 0.
 '''
 
-def update_users(old_first, old_last, new_first, new_last):
-    with open("users.csv", encoding="utf8", mode="r") as file:
-        csv_reader = reader(file)
-        data = list(csv_reader)
-        count = 0
+# def update_users(old_first, old_last, new_first, new_last):
+#     with open("users.csv", encoding="utf8", mode="r") as file:
+#         csv_reader = reader(file)
+#         data = list(csv_reader)
+#         count = 0
         
-    with open("users.csv", encoding="utf8", mode="w") as file:
-        csv_writer = writer(file)
-        for row in data:
-            if row[0] == old_first and row[1] == old_last:
+#     with open("users.csv", encoding="utf8", mode="w") as file:
+#         csv_writer = writer(file)
+#         for row in data:
+#             if row[0] == old_first and row[1] == old_last:
+#                 count += 1
+#                 csv_writer.writerow([new_first, new_last])
+#             else:
+#                 csv_writer.writerow(row)
+#         return f"Users updated: {count}."
+
+# update_users("Colt", "Steele", "Boba", "Fett")
+
+'''
+Ex 5:
+
+Implement the following function:
+
+delete_users : Takes in a first name and a last name. 
+Updates the users.csv file so that any user whose first and last names match the inputs are removed. 
+The function should return a count of how many users were removed.
+
+delete_users("Grace", "Hopper") # Users deleted: 1.
+delete_users("Colt", "Steele") # Users deleted: 2.
+delete_users("Not", "Here") # Users deleted: 0.
+'''
+
+def delete_users(first_name, last_name):
+    with open("users.csv") as csvfile:
+        csv_reader = reader(csvfile)
+        rows = list(csv_reader)
+ 
+    count = 0
+    with open("users.csv", "w") as csvfile:
+        csv_writer = writer(csvfile)
+        for row in rows:
+            if row[0] == first_name and row[1] == last_name:
                 count += 1
-                csv_writer.writerow([new_first, new_last])
             else:
                 csv_writer.writerow(row)
-        print(count)
-
-update_users("Colt", "Steele", "Boba", "Fett")
+ 
+    return f"Users deleted: {count}."
+    
+print(delete_users("Colt", "Steele"))
