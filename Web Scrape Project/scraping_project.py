@@ -35,7 +35,8 @@ def play_game():
 def get_author_bio(quote_link):
     url = "http://quotes.toscrape.com" + quote_link
     response = requests.get(url, headers={"Accept": "application/json"})
-    print(response.text)
+    soup = BeautifulSoup(response.text, "html.parser")
+    author_section = soup.find(class_="author-details")
 
 def make_url_request():
     url = "http://quotes.toscrape.com"
