@@ -9,11 +9,11 @@ def play_game():
 
     while num_guesses > 0:
         if num_guesses == 4:
-            print("Can you guess is the author behind the following quote?")
+            print("Can you guess who is the author behind the following quote?")
             print(random_quote["text"])
         if num_guesses == 3:
             print("Here's a hint:")
-            print(random_quote["bio_link"])
+            get_author_bio(random_quote["bio_link"])
         answer = input()
         if answer == random_quote["author"]:
             print("Well done! You guessed it.")
@@ -32,8 +32,10 @@ def play_game():
                 print("Thanks for playing.")
                 break
 
-# def get_author_bio():
-#     url = 
+def get_author_bio(quote_link):
+    url = "http://quotes.toscrape.com" + quote_link
+    response = requests.get(url, headers={"Accept": "application/json"})
+    print(response.text)
 
 def make_url_request():
     url = "http://quotes.toscrape.com"
