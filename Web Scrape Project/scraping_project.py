@@ -16,7 +16,16 @@ def play_game():
             hints = get_author_bio(random_quote["bio_link"])
             print("The author was born " + hints["born"])
         if num_guesses == 2:
-            print("Maybe some information about the author will help:")
+            print("Maybe some information about the author will help, author initials are: ")
+            names = random_quote["author"].split(" ")
+            initials = ""
+            for name in names:
+                if initials == "":
+                    initials = name[0] + "."
+                else:    
+                    initials = initials + " " + name[0] +"."
+            print(initials)
+        if num_guesses == 1:
             print(hints["description"])
         answer = input()
         if answer == random_quote["author"]:
