@@ -13,12 +13,17 @@ def play_game():
             print(random_quote["text"])
         if num_guesses == 3:
             print("Here's a hint:")
-            get_author_bio(random_quote["bio_link"])
+            hints = get_author_bio(random_quote["bio_link"])
+            print("The author was born " + hints["born"])
+        if num_guesses == 2:
+            print("Maybe some information about the author will help:")
+            print(hints["description"])
         answer = input()
         if answer == random_quote["author"]:
             print("Well done! You guessed it.")
             num_guesses = 0
         else:
+            print("Incorrect sorry.")
             num_guesses -= 1
 
         if num_guesses == 0:
@@ -36,7 +41,14 @@ def get_author_bio(quote_link):
     url = "http://quotes.toscrape.com" + quote_link
     response = requests.get(url, headers={"Accept": "application/json"})
     soup = BeautifulSoup(response.text, "html.parser")
-    author_section = soup.find(class_="author-details")
+    born = soup.find(class_="author-born-date").text
+    born = born + " " + soup.find(class_="author-born-location").text
+    bio_description = soup.find(class_="author-description").text
+
+    return {
+        "born": born,
+        "description": bio_description
+    }
 
 def make_url_request():
     url = "http://quotes.toscrape.com"
