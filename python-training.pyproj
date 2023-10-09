@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{aade153e-a36d-4baa-b1fa-45883eb389a3}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>Final Exercises\Ex Part 6\exrcises part 6.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <TestFramework>Pytest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="bouncer.py" />
+    <Compile Include="confitionals.py" />
+    <Compile Include="converter.py" />
+    <Compile Include="CSV\users csv exercises.py" />
+    <Compile Include="Deck of Cards\card.py" />
+    <Compile Include="Deck of Cards\deck.py" />
+    <Compile Include="Decorators\decorator exercises.py" />
+    <Compile Include="Dictionaries\dictionary comprehension.py" />
+    <Compile Include="Dictionaries\random food.py" />
+    <Compile Include="Dunder Methods\train exercise.py" />
+    <Compile Include="Error Handling\error exercise.py" />
+    <Compile Include="File IO\chapter statistics.py" />
+    <Compile Include="File IO\copyfile.py" />
+    <Compile Include="File IO\file alteration.py" />
+    <Compile Include="Filter\filter.py" />
+    <Compile Include="Final Exercises\capitalize.py" />
+    <Compile Include="Final Exercises\check if list of lists.py" />
+    <Compile Include="Final Exercises\count vowels.py" />
+    <Compile Include="Final Exercises\Ex Part 3\exercises part 3.py" />
+    <Compile Include="Final Exercises\Ex Part 4\exercises part 4.py" />
+    <Compile Include="Final Exercises\Ex Part 5\exercises part 5.py" />
+    <Compile Include="Final Exercises\Ex Part 6\exrcises part 6.py" />
+    <Compile Include="Final Exercises\find factors.py" />
+    <Compile Include="Final Exercises\includes.py" />
+    <Compile Include="Final Exercises\invert string.py" />
+    <Compile Include="Final Exercises\remove even elements.py" />
+    <Compile Include="Final Exercises\repeat.py" />
+    <Compile Include="Final Exercises\truncate.py" />
+    <Compile Include="Functions\all.py" />
+    <Compile Include="Functions\args.py" />
+    <Compile Include="Functions\basic functions.py" />
+    <Compile Include="Functions\function exercises.py" />
+    <Compile Include="Functions\functiontest.py" />
+    <Compile Include="Functions\kwargs.py" />
+    <Compile Include="Functions\math.py" />
+    <Compile Include="Functions\min max.py" />
+    <Compile Include="Functions\zip.py" />
+    <Compile Include="gamev1.py" />
+    <Compile Include="Generator\kombucha song.py" />
+    <Compile Include="Generator\multiples generator.py" />
+    <Compile Include="Generator\week generator..py" />
+    <Compile Include="Generator\yes or no.py" />
+    <Compile Include="hello.py" />
+    <Compile Include="Http with Python\basics.py" />
+    <Compile Include="Http with Python\dad joke generator api.py" />
+    <Compile Include="Lambda\lambda test.py" />
+    <Compile Include="Lists\List Intersection.py" />
+    <Compile Include="Loops\guessing game.py" />
+    <Compile Include="Loops\looping.py" />
+    <Compile Include="Loops\while loop ex.py" />
+    <Compile Include="Maps\map.py" />
+    <Compile Include="Modules\exercises.py" />
+    <Compile Include="Modules\helpers.py" />
+    <Compile Include="MRO\child.py" />
+    <Compile Include="MRO\father.py" />
+    <Compile Include="MRO\mother.py" />
+    <Compile Include="OOP\bank account.py" />
+    <Compile Include="OOP\chicken coop.py" />
+    <Compile Include="randompy.py" />
+    <Compile Include="Regex\format date.py" />
+    <Compile Include="Regex\parse bytes from string.py" />
+    <Compile Include="Regex\profanity filter.py" />
+    <Compile Include="Regex\validate time.py" />
+    <Compile Include="RPG Classes\Character.py" />
+    <Compile Include="Sets\sets and math.py" />
+    <Compile Include="Unittest and TDD\daily_activities.py" />
+    <Compile Include="Unittest and TDD\daily_activities_test.py" />
+    <Compile Include="Web Scrape Project\scraping_project.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="File IO\story.txt" />
+    <Content Include="File IO\story_alteration_copy.txt" />
+    <Content Include="File IO\story_copy.txt" />
+    <Content Include="File IO\stoy_copy.txt" />
+    <Content Include="Web Scrape Project\bio.html" />
+    <Content Include="Web Scrape Project\quotes.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CSV" />
+    <Folder Include="Deck of Cards" />
+    <Folder Include="Decorators" />
+    <Folder Include="Dictionaries" />
+    <Folder Include="Dunder Methods" />
+    <Folder Include="Error Handling" />
+    <Folder Include="File IO" />
+    <Folder Include="Filter" />
+    <Folder Include="Final Exercises" />
+    <Folder Include="Final Exercises\Ex Part 3" />
+    <Folder Include="Final Exercises\Ex Part 4" />
+    <Folder Include="Final Exercises\Ex Part 5" />
+    <Folder Include="Final Exercises\Ex Part 6\" />
+    <Folder Include="Functions" />
+    <Folder Include="Generator" />
+    <Folder Include="Http with Python" />
+    <Folder Include="Lambda" />
+    <Folder Include="Lists" />
+    <Folder Include="Loops" />
+    <Folder Include="Maps" />
+    <Folder Include="Modules" />
+    <Folder Include="MRO" />
+    <Folder Include="OOP" />
+    <Folder Include="Regex" />
+    <Folder Include="RPG Classes" />
+    <Folder Include="Sets" />
+    <Folder Include="Unittest and TDD" />
+    <Folder Include="Web Scrape Project" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
